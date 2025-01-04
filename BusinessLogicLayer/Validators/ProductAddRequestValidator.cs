@@ -24,7 +24,7 @@ namespace BusinessLogicLayer.Validators
                 .InclusiveBetween(0, double.MaxValue).WithMessage("Unit price should be greater than zero");
 
             RuleFor(temp => temp.QuanityInStock)
-               .InclusiveBetween(0, int.MaxValue).WithMessage("Unit price should be greater than zero");
+               .InclusiveBetween(0, int.MaxValue).WithMessage("QuanityInStock should be greater than zero");
         }
 
     }
