@@ -1,4 +1,8 @@
 ﻿using BusinessLogicLayer.Mappers;
+using BusinessLogicLayer.ServiceContracts;
+using BusinessLogicLayer.Services;
+using BusinessLogicLayer.Validators;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -13,6 +17,8 @@ namespace BusinessLogicLayer
         public static IServiceCollection AddBusinessLogicLayer(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(MapperProfile).Assembly);
+            services.AddScoped<IProductService, ProductService>();
+            services.AddValidatorsFromAssemblyContaining<ProductAddRequestValidator>();
             return services;
         }
     }
