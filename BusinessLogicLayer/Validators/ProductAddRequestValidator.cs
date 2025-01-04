@@ -17,13 +17,13 @@ namespace BusinessLogicLayer.Validators
             RuleFor(temp => temp.ProductName)
                 .NotEmpty().WithMessage("Product can not be null");
 
-            RuleFor(temp => temp.CategoryOptions)
+            RuleFor(temp => temp.Category)
                 .IsInEnum().WithMessage("category can't be blank");
 
             RuleFor(temp => temp.UnitPrice)
                 .InclusiveBetween(0, double.MaxValue).WithMessage("Unit price should be greater than zero");
 
-            RuleFor(temp => temp.QuanityInStock)
+            RuleFor(temp => temp.QuantityInStock)
                .InclusiveBetween(0, int.MaxValue).WithMessage("QuanityInStock should be greater than zero");
         }
 

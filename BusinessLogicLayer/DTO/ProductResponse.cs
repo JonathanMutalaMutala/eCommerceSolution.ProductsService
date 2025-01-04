@@ -4,9 +4,9 @@
     {
         public Guid ProductID;
         public string? ProductName;
-        public CategoryOptions CategoryOptions;
+        public CategoryOptions Category;
         public double? UnitPrice;
-        public int? QuanityInStock;
+        public int? QuantityInStock;
     }
 
 }
