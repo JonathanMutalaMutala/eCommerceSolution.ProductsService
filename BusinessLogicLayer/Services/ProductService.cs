@@ -18,15 +18,13 @@ namespace BusinessLogicLayer.Services
     public class ProductService : IProductService
     {
         private readonly IValidator<ProductAddRequest> _addProductValidator;
-        private readonly IProductService _productService;
         private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
         private readonly IValidator<ProductUpdateRequest> _productUpdateRequestValidator;
 
-        public ProductService(IValidator<ProductAddRequest> addProductValidator, IProductService productService, IMapper mapper, IProductRepository productRepository, IValidator<ProductUpdateRequest> productUpdateRequestValidator)
+        public ProductService(IValidator<ProductAddRequest> addProductValidator, IMapper mapper, IProductRepository productRepository, IValidator<ProductUpdateRequest> productUpdateRequestValidator)
         {
             _addProductValidator = addProductValidator;
-            _productService = productService;
             _mapper = mapper;
             _productRepository = productRepository;
             _productUpdateRequestValidator = productUpdateRequestValidator;
